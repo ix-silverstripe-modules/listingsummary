@@ -1,0 +1,12 @@
+---
+Name: listingsummary
+---
+
+SiteTree:
+  extensions:
+    - 'PageExtension'
+    
+ListingSummary:
+  targetclasses:
+    - News
+    - CalendarEvent

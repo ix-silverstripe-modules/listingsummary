@@ -1,0 +1,22 @@
+{
+	"name" : "silverstripe-modules/listingsummary",
+	"description" : "Extension for adding a listing summary to every SiteTree object",
+	"type" : "silverstripe-module",
+	"keywords" : [
+		"silverstripe",
+		"listing summary",
+		"sitetree"
+	],
+	"authors" : [{
+			"name" : "Stewart Wilson",
+			"email" : "stewart.wilson@internetrix.com.au"
+		}
+	],
+	"require" : {
+		"silverstripe/framework" : "~3.1"
+	},
+	"extra" : {
+		"installer-name" : "listingsummary"
+	},
+	"minimum-stability" : "dev"
+}
