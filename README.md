@@ -17,7 +17,7 @@ None
 
 ## Configuration
 
-You can add the following to your mysite/config.yml. List which page classes you wish to enable the options on.
+You can add the following to your mysite/config.yml. List which page classes you wish to enable the options on. By default, it is applied on News and CalendarEvent.
 
 	ListingSummary:
 	  targetclasses:
