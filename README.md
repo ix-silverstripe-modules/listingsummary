@@ -6,6 +6,7 @@ This module adds a Listing Summary option in CMSAdmin. However, the fields will 
 Maintainer Contact
 ------------------
 *  Stewart Wilson (<stewart.wilson@internetrix.com.au>)
+*  Guy Watson (<guy.watson@internetrix.com.au>)
 
 ## Requirements
 
@@ -17,12 +18,12 @@ None
 
 ## Configuration
 
-You can add the following to your mysite/config.yml. List which page classes you wish to enable the options on. By default, it is applied on News and CalendarEvent.
+You can add the following to your mysite/config.yml. List which page classes you wish to disable the options on. By default, it is disabled on VirtualPage and RedirectorPage.
 
 	ListingSummary:
 	  targetclasses:
-	    - Page
-	    - News
+	    - VirtualPage
+	    - RedirectorPage
  
 ## Templating
 
