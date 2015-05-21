@@ -10,6 +10,9 @@
 	"authors" : [{
 			"name" : "Stewart Wilson",
 			"email" : "stewart.wilson@internetrix.com.au"
+		}, {
+			"name" : "Guy Watson",
+			"email" : "guy.watson@internetrix.com.au"
 		}
 	],
 	"require" : {

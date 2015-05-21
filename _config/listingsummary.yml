@@ -7,6 +7,6 @@ SiteTree:
     - 'PageExtension'
     
 ListingSummary:
-  targetclasses:
-    - News
-    - CalendarEvent
+  blacklist:
+    - VirtualPage
+    - RedirectorPage
