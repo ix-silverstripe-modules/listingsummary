@@ -37,6 +37,8 @@ class ListingPage extends Page {
 		$fields->addFieldToTab('Root.List', CompositeField::create(GridField::create( 'ListItems','List Items', $this->ListItems(), $listConfig ))
 				->displayIf("ListSource")->isEqualTo("Custom")->end());
 		
+		$this->extend("IRXListingCMSFields", $fields);
+		
 		return $fields;
 	}
 }
@@ -95,7 +97,11 @@ class ListingPage_Controller extends Page_Controller {
 			$this->PaginationLimit = 10;
 		}
 	
-		$children = $this->Children();
+		if($this->ListSource == 'Children'){
+			$children = $this->Children();
+		}else{
+			$children = $this->ListItems();
+		}
 	
 		if($sort = $this->getSortFilter()){
 			$children = $children->sort($sort);

@@ -34,4 +34,8 @@ Below are examples on how you can use the Listing Summary on a News Article
 	<% loop $News %>
 		$ListingSummary
 		<% if $ShowListingImageOnPage %><img src="$ListingImage.URL"><% end_if %>
-	<% end_loop %>   
+	<% end_loop %>  
+	
+Use the following variable to get the children/list items. This will return the children or list items depending on what is chosen in the CMS. You can overload the Pagination Limit by passing through an argument of the new limit.
+
+	$ListChildren
