@@ -12,11 +12,11 @@ Maintainer Contact
 
 * SilverStripe 3.1~
 
-## Dependencies
+## Dependencies (in Composer)
 
 * Linkable 1.0.4
 * Display Logic
-* GridFieldConfig_ManySortableRecordEditor
+* IRX GridFieldExtras
 
 ## Configuration
 
