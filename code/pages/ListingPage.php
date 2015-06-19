@@ -8,10 +8,16 @@ class ListingPage extends Page {
 	
 	private static $db = array(
 		'ListTitle'			=> 'Varchar(255)',
+		'ListSource'		=>  'enum("Children,Custom","Children")',
 		'PaginationLimit' 	=> 'Int'
 	);
 	
+	private static $has_many = array(
+		'ListItems' => 'ListItem'
+	);
+	
 	private static $defaults = array(
+		'ListSource' => 'Children',
 		'PaginationLimit' => 20
 	);
 	
@@ -21,6 +27,15 @@ class ListingPage extends Page {
 		
 		$fields->insertAfter(NumericField::create('PaginationLimit', 'Pagination Limit'), 'MenuTitle');
 		$fields->insertAfter(TextField::create('ListTitle', 'List Title'), 'MenuTitle');
+		
+		$fields->addFieldToTab('Root.List', TextField::create('ListTitle', 'List Title'));
+		$fields->addFieldToTab('Root.List', NumericField::create('PaginationLimit', 'Pagination Limit'));
+		
+		$fields->addFieldToTab('Root.List', OptionsetField::create('ListSource', 'List Source' ,$this->dbObject('ListSource')->enumValues()));
+		$listConfig = GridFieldConfig_ManySortableRecordEditor::create(30);
+		
+		$fields->addFieldToTab('Root.List', CompositeField::create(GridField::create( 'ListItems','List Items', $this->ListItems(), $listConfig ))
+				->displayIf("ListSource")->isEqualTo("Custom")->end());
 		
 		return $fields;
 	}

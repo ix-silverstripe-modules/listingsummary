@@ -10,11 +10,13 @@ Maintainer Contact
 
 ## Requirements
 
-SilverStripe 3.1~
+* SilverStripe 3.1~
 
 ## Dependencies
 
-None
+* Linkable 1.0.4
+* Display Logic
+* GridFieldConfig_ManySortableRecordEditor
 
 ## Configuration
 
