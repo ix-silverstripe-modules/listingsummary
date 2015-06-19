@@ -1,4 +1,4 @@
-ListingSummary
+ListingSummary 1.0.0
 =======================================
 
 This module adds a Listing Summary option in CMSAdmin. However, the fields will only show on Classes defined in configuration. See below for configuration notes.
