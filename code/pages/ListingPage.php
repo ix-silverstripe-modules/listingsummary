@@ -5,6 +5,7 @@
 class ListingPage extends Page {
 	
 	private static $icon = 'listingsummary/images/icons/listingpage';
+	private static $description = 'Lists Children pages or other items on a page';
 	
 	private static $db = array(
 		'ListTitle'			=> 'Varchar(255)',
