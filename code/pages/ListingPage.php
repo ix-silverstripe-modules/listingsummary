@@ -19,7 +19,7 @@ class ListingPage extends Page {
 	
 	private static $defaults = array(
 		'ListSource' => 'Children',
-		'PaginationLimit' => 20
+		'PaginationLimit' => 10
 	);
 	
 	public function getCMSFields(){
@@ -33,8 +33,8 @@ class ListingPage extends Page {
 		$fields->addFieldToTab('Root.List', NumericField::create('PaginationLimit', 'Pagination Limit'));
 		
 		$fields->addFieldToTab('Root.List', OptionsetField::create('ListSource', 'List Source' ,$this->dbObject('ListSource')->enumValues()));
-		$listConfig = GridFieldConfig_ManySortableRecordEditor::create(30);
 		
+		$listConfig = GridFieldConfig_ManySortableRecordEditor::create(30);
 		$fields->addFieldToTab('Root.List', CompositeField::create(GridField::create( 'ListItems','List Items', $this->ListItems(), $listConfig ))
 				->displayIf("ListSource")->isEqualTo("Custom")->end());
 		
@@ -79,6 +79,12 @@ class ListingPage_Controller extends Page_Controller {
 					break;
 				case 'desc':
 					$sort = '"Title" DESC';
+					break;
+				case 'newest':
+					$sort = '"Created" DESC';
+					break;
+				case 'oldest':
+					$sort = '"Created" ASC';
 					break;
 				default:
 					break;
