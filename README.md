@@ -1,7 +1,9 @@
-ListingSummary 1.0.0
+ListingSummary master
 =======================================
 
-This module adds a Listing Summary option in CMSAdmin. However, the fields will only show on Classes defined in configuration. See below for configuration notes.
+This module adds a Listing Summary option in CMSAdmin. The listing summary will appear on all SiteTree options. You can choose to list children of the Listing Page or a list of items (usually, Title, Listing Summary (content) and Image) on the page.
+
+You can make pages exempt from the Listing Summary fields by changing your configuration.
 
 Maintainer Contact
 ------------------
@@ -23,7 +25,7 @@ Maintainer Contact
 You can add the following to your mysite/config.yml. List which page classes you wish to disable the options on. By default, it is disabled on VirtualPage and RedirectorPage.
 
 	ListingSummary:
-	  targetclasses:
+	  blacklist:
 	    - VirtualPage
 	    - RedirectorPage
  
