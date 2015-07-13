@@ -10,3 +10,4 @@ ListingSummary:
   blacklist:
     - VirtualPage
     - RedirectorPage
+    - ErrorPage
