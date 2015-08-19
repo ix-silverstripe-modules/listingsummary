@@ -35,8 +35,8 @@ class ListingPage extends Page {
 		$fields->addFieldToTab('Root.List', OptionsetField::create('ListSource', 'List Source' ,$this->dbObject('ListSource')->enumValues()));
 		
 		$listConfig = GridFieldConfig_ManySortableRecordEditor::create(30);
-		$fields->addFieldToTab('Root.List', CompositeField::create(GridField::create( 'ListItems','List Items', $this->ListItems(), $listConfig ))
-				->displayIf("ListSource")->isEqualTo("Custom")->end());
+		$fields->addFieldToTab('Root.List', DisplayLogicWrapper::create(GridField::create( 'ListItems','List Items', $this->ListItems(), $listConfig ))
+			->displayIf("ListSource")->isEqualTo("Custom")->end());
 		
 		$this->extend("IRXListingCMSFields", $fields);
 		
