@@ -32,6 +32,8 @@ class ListItem extends DataObject {
 				->addExtraClass('withmargin')
 		);
 
+		$this->extend("IRXListItemCMSFields", $fields);
+		
 		return $fields;
 	}
 
