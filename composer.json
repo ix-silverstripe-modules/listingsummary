@@ -1,12 +1,19 @@
 {
-	"name" : "silverstripe-modules/listingsummary",
+	"name" : "internetrix/silverstripe-listingsummary",
 	"description" : "Extension for adding a listing summary to every SiteTree object",
-	"type" : "silverstripe-module",
+	"type" : "silverstripe-vendormodule",
+    "repositories" : [{
+            "type" : "git",
+            "url" : "https://gitlab.internetrix.net/silverstripe-modules/gridfieldextras.git",
+            "name" : "silverstripe-modules/gridfieldextras"
+        }
+    ],
 	"keywords" : [
 		"silverstripe",
 		"listing summary",
 		"sitetree"
 	],
+    "license": "BSD-3-Clause",
 	"authors" : [{
 			"name" : "Stewart Wilson",
 			"email" : "stewart.wilson@internetrix.com.au"
@@ -15,20 +22,26 @@
 			"email" : "guy.watson@internetrix.com.au"
 		}
 	],
-	"repositories" : [{
-			"type" : "git",
-			"url" : "https://gitlab.internetrix.net/silverstripe-modules/gridfieldextras.git",
-			"name" : "silverstripe-modules/gridfieldextras"
-		}
-	],
 	"require" : {
-		"silverstripe/framework" : "~3.1",
-		"sheadawson/silverstripe-linkable" : "*",
-		"unclecheese/display-logic" : "*",
-		"silverstripe-modules/gridfieldextras" : "*"
+		"silverstripe/framework" : "^4.0.0",
+		"sheadawson/silverstripe-linkable" : "2.0.0",
+		"unclecheese/display-logic" : "2.0.0"
+	},
+	"suggest": {
+	    "silverstripe-modules/gridfieldextras": "Allows more advanced logging of the application flow"
 	},
 	"extra" : {
-		"installer-name" : "listingsummary"
+		"installer-name" : "listingsummary",
+        "expose": [
+          "images",
+          "javascript"
+        ]
 	},
+    "autoload": {
+      "psr-4": {
+        "Internetrix\\ListingSummary\\": "src/"
+      }
+    },
+    "prefer-stable": true,
 	"minimum-stability" : "dev"
 }

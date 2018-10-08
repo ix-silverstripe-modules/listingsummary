@@ -2,12 +2,12 @@
 Name: listingsummary
 ---
 
-SiteTree:
+SilverStripe\CMS\Model\SiteTree:
   extensions:
-    - 'PageExtension'
-    
-ListingSummary:
+    - 'Internetrix\ListingSummary\PageExtension'
+
+Internetrix\ListingSummary:
   blacklist:
-    - VirtualPage
-    - RedirectorPage
-    - ErrorPage
+    - 'SilverStripe\CMS\Model\VirtualPage'
+    - 'SilverStripe\CMS\Model\RedirectorPage'
+    - 'SilverStripe\ErrorPage\ErrorPage'

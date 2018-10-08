@@ -1,4 +1,16 @@
 <?php
+
+namespace Internetrix\ListingSummary;
+
+use SilverStripe\ORM\DataExtension;
+use SilverStripe\Forms\ToggleCompositeField;
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Core\Config\Config;
+use SilverStripe\Forms\CheckboxField;
+use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
+use SilverStripe\Forms\HiddenField;
+use SilverStripe\AssetAdmin\Forms\UploadField;
+
 class PageExtension extends DataExtension {
 	
 	private static $db = array(

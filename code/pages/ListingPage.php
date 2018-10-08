@@ -2,6 +2,20 @@
 /**
  *
  */
+
+namespace Internetrix\ListingSummary;
+
+use Page;
+use Page_Controller;
+use SilverStripe\Forms\NumericField;
+use SilverStripe\Forms\TextField;
+use SilverStripe\Forms\OptionsetField;
+use SilverStripe\Forms\GridField\GridField;
+use SilverStripe\View\Requirements;
+use SilverStripe\ORM\PaginatedList;
+use UncleCheese\DisplayLogic\Forms\Wrapper;
+use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
+
 class ListingPage extends Page {
 	
 	private static $icon = 'listingsummary/images/icons/listingpage';
@@ -33,9 +47,16 @@ class ListingPage extends Page {
 		$fields->addFieldToTab('Root.List', NumericField::create('PaginationLimit', 'Pagination Limit'));
 		
 		$fields->addFieldToTab('Root.List', OptionsetField::create('ListSource', 'List Source' ,$this->dbObject('ListSource')->enumValues()));
-		
-		$listConfig = GridFieldConfig_ManySortableRecordEditor::create(30);
-		$fields->addFieldToTab('Root.List', DisplayLogicWrapper::create(GridField::create( 'ListItems','List Items', $this->ListItems(), $listConfig ))
+
+
+        if(class_exists('GridFieldConfig_ManySortableRecordEditor')) {
+            $listConfig = GridFieldConfig_ManySortableRecordEditor::create(30);
+        } else {
+            $listConfig = GridFieldConfig_RecordEditor::create(30);
+        }
+
+
+		$fields->addFieldToTab('Root.List', Wrapper::create(GridField::create( 'ListItems','List Items', $this->ListItems(), $listConfig ))
 			->displayIf("ListSource")->isEqualTo("Custom")->end());
 		
 		$this->extend("IRXListingCMSFields", $fields);
