@@ -12,12 +12,12 @@ Maintainer Contact
 
 ## Requirements
 
-* SilverStripe ^4.0
+* SilverStripe \^4.0
 
 ## Dependencies (in Composer)
 
-* Linkable ^2.0
-* Display Logic ^2.0
+* Linkable \^2.0
+* Display Logic \^2.0
 
 ## Suggestions (in Composer)
 
