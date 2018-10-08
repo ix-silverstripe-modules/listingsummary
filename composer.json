@@ -24,8 +24,8 @@
 	],
 	"require" : {
 		"silverstripe/framework" : "^4.0.0",
-		"sheadawson/silverstripe-linkable" : "2.0.0",
-		"unclecheese/display-logic" : "2.0.0"
+		"sheadawson/silverstripe-linkable" : "^2.0",
+		"unclecheese/display-logic" : "^2.0"
 	},
 	"suggest": {
 	    "silverstripe-modules/gridfieldextras": "Allows more advanced logging of the application flow"
