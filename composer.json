@@ -28,7 +28,7 @@
 		"unclecheese/display-logic" : "^2.0"
 	},
 	"suggest": {
-	    "silverstripe-modules/gridfieldextras": "Allows more advanced logging of the application flow"
+	    "silverstripe-modules/gridfieldextras": "Allows more advanced logging of the application flow."
 	},
 	"extra" : {
 		"installer-name" : "listingsummary",
