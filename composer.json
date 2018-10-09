@@ -2,7 +2,8 @@
 	"name" : "internetrix/silverstripe-listingsummary",
 	"description" : "Extension for adding a listing summary to every SiteTree object",
 	"type" : "silverstripe-vendormodule",
-	"repositories" : [{
+	"repositories" : [
+      {
 			"type" : "git",
 			"url" : "https://gitlab.internetrix.net/silverstripe-modules/gridfieldextras.git",
 			"name" : "silverstripe-modules/gridfieldextras"
