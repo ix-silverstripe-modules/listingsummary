@@ -1,4 +1,13 @@
 <?php
+
+namespace Internetrix\ListingSummary;
+
+use SilverStripe\ORM\DataObject;
+use Sheadawson\Linkable\Forms\LinkField;
+use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
+use SilverStripe\Core\Config\Config;
+use SilverStripe\AssetAdmin\Forms\UploadField;
+
 class ListItem extends DataObject {
 
 	private static $default_sort = '"Sort" ASC';

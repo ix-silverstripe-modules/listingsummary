@@ -12,12 +12,15 @@ Maintainer Contact
 
 ## Requirements
 
-* SilverStripe 3.1~
+* SilverStripe \^4.0
 
 ## Dependencies (in Composer)
 
-* Linkable 1.0.4
-* Display Logic
+* Linkable \^2.0
+* Display Logic \^2.0
+
+## Suggestions (in Composer)
+
 * IRX GridFieldExtras
 
 ## Configuration
