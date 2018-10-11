@@ -18,23 +18,23 @@ use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
 
 class ListingPage extends Page {
 	
-	private static $icon = 'listingsummary/images/icons/listingpage';
+	private static $icon = 'vendor/internetrix/silverstripe-listingsummary/images/icons/listingpage';
 	private static $description = 'Lists Children pages or other items on a page';
 	
-	private static $db = array(
+	private static $db = [
 		'ListTitle'			=> 'Varchar(255)',
 		'ListSource'		=>  'Enum("Children,Custom","Children")',
 		'PaginationLimit' 	=> 'Int'
-	);
+	];
 	
-	private static $has_many = array(
-		'ListItems' => 'ListItem'
-	);
+	private static $has_many = [
+		'ListItems' => ListItem::class
+	];
 	
-	private static $defaults = array(
+	private static $defaults = [
 		'ListSource' => 'Children',
 		'PaginationLimit' => 10
-	);
+	];
 	
 	public function getCMSFields(){
 		
