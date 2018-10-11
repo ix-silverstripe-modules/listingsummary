@@ -15,6 +15,7 @@ use SilverStripe\View\Requirements;
 use SilverStripe\ORM\PaginatedList;
 use UncleCheese\DisplayLogic\Forms\Wrapper;
 use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
+use Internetrix\GridFieldExtras\GridFieldConfig_ManySortableRecordEditor;
 
 class ListingPage extends Page {
 	

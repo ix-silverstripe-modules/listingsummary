@@ -15,22 +15,22 @@ class ListItem extends DataObject {
 
 	private static $default_sort = '"Sort" ASC';
 
-	private static $db = array(
+	private static $db = [
 			"Title"		=> 'Varchar(255)',
 			"Content"	=> 'HTMLText',
 			"Sort" 		=> "Int"
-	);
+	];
 
-	private static $has_one = array(
+	private static $has_one = [
 			"Parent"		=> Page::class,
 			"ListingImage"	=> Image::class,
 			"Link"			=> Link::class
-	);
+	];
 
-	private static $summary_fields= array(
+	private static $summary_fields = [
 			"ListingImage.CMSThumbnail" 	=> "Image",
 			"Title"							=> "Title"
-	);
+	];
 
 	public function getCMSFields(){
 		$fields = parent::getCMSFields();

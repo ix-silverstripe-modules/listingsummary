@@ -10,17 +10,18 @@ use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 use SilverStripe\Forms\HiddenField;
 use SilverStripe\AssetAdmin\Forms\UploadField;
+use SilverStripe\Assets\Image;
 
 class PageExtension extends DataExtension {
 	
-	private static $db = array(
+	private static $db = [
 		'ShowListingImageOnPage'	=> 'Int',
 		'ListingSummary'			=> 'HTMLText'
-	);
+	];
 	
-	private static $has_one = array(
-		'ListingImage'	=> 'Image'
-	);
+	private static $has_one = [
+		'ListingImage'	=> Image::class
+	];
 	
 	public function updateCMSFields(FieldList $fields){
 
