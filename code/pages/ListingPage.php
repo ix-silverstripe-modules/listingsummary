@@ -6,7 +6,7 @@
 namespace Internetrix\ListingSummary;
 
 use Page;
-use Page_Controller;
+use PageController;
 use SilverStripe\Forms\NumericField;
 use SilverStripe\Forms\TextField;
 use SilverStripe\Forms\OptionsetField;
@@ -65,7 +65,7 @@ class ListingPage extends Page {
 	}
 }
 
-class ListingPage_Controller extends Page_Controller {
+class ListingPage_Controller extends PageController {
 	
 	public function init() {
 		parent::init();
