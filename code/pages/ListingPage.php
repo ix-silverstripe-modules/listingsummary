@@ -23,7 +23,7 @@ class ListingPage extends Page {
 	
 	private static $db = array(
 		'ListTitle'			=> 'Varchar(255)',
-		'ListSource'		=>  'enum("Children,Custom","Children")',
+		'ListSource'		=>  'Enum("Children,Custom","Children")',
 		'PaginationLimit' 	=> 'Int'
 	);
 	
