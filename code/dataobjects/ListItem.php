@@ -7,6 +7,9 @@ use Sheadawson\Linkable\Forms\LinkField;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 use SilverStripe\Core\Config\Config;
 use SilverStripe\AssetAdmin\Forms\UploadField;
+use Page;
+use SilverStripe\Assets\Image;
+use Sheadawson\Linkable\Models\Link;
 
 class ListItem extends DataObject {
 
@@ -19,9 +22,9 @@ class ListItem extends DataObject {
 	);
 
 	private static $has_one = array(
-			"Parent"		=> "Page",
-			"ListingImage"	=> "Image",
-			"Link"			=> "Link"
+			"Parent"		=> Page::class,
+			"ListingImage"	=> Image::class,
+			"Link"			=> Link::class
 	);
 
 	private static $summary_fields= array(
