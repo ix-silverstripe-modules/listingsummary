@@ -4,7 +4,7 @@ Name: listingsummary
 
 SilverStripe\CMS\Model\SiteTree:
   extensions:
-    - 'Internetrix\ListingSummary\PageExtension'
+    - 'Internetrix\ListingSummary\Extensions\PageExtension'
 
 Internetrix\ListingSummary:
   blacklist:

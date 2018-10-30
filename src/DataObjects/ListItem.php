@@ -1,6 +1,6 @@
 <?php
 
-namespace Internetrix\ListingSummary;
+namespace Internetrix\ListingSummary\DataObjects;
 
 use SilverStripe\ORM\DataObject;
 use Sheadawson\Linkable\Forms\LinkField;

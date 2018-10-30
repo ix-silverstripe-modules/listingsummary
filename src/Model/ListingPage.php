@@ -3,7 +3,7 @@
  *
  */
 
-namespace Internetrix\ListingSummary;
+namespace Internetrix\ListingSummary\Model;
 
 use Page;
 use PageController;

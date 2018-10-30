@@ -1,6 +1,6 @@
 <?php
 
-namespace Internetrix\ListingSummary;
+namespace Internetrix\ListingSummary\Extensions;
 
 use SilverStripe\ORM\DataExtension;
 use SilverStripe\Forms\ToggleCompositeField;
