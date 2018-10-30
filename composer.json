@@ -34,8 +34,8 @@
 	"extra" : {
 		"installer-name" : "listingsummary",
 		"expose": [
-		  "images",
-		  "javascript"
+		  "client/images",
+		  "client/javascript"
 		]
 	},
 	"autoload": {
