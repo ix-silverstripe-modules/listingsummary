@@ -10,6 +10,7 @@ use SilverStripe\AssetAdmin\Forms\UploadField;
 use Page;
 use SilverStripe\Assets\Image;
 use Sheadawson\Linkable\Models\Link;
+use SilverStripe\Versioned\Versioned;
 
 class ListItem extends DataObject {
 
@@ -31,6 +32,16 @@ class ListItem extends DataObject {
 			"ListingImage.CMSThumbnail" 	=> "Image",
 			"Title"							=> "Title"
 	];
+
+    private static $owns = [
+        'ListingImage',
+    ];
+
+    private static $extensions = [
+        Versioned::class
+    ];
+
+    private static $versioned_gridfield_extensions = true;
 
 	public function getCMSFields(){
 		$fields = parent::getCMSFields();

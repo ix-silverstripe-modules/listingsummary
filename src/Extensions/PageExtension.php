@@ -11,6 +11,7 @@ use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 use SilverStripe\Forms\HiddenField;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Assets\Image;
+use SilverStripe\Versioned\Versioned;
 
 class PageExtension extends DataExtension {
 	
@@ -22,6 +23,16 @@ class PageExtension extends DataExtension {
 	private static $has_one = [
 		'ListingImage'	=> Image::class
 	];
+
+    private static $owns = [
+        'ListingImage',
+    ];
+
+    private static $extensions = [
+        Versioned::class
+    ];
+
+    private static $versioned_gridfield_extensions = true;
 	
 	public function updateCMSFields(FieldList $fields){
 
