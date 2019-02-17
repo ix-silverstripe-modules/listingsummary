@@ -17,7 +17,7 @@ use Internetrix\ListingSummary\DataObjects\ListItem;
 
 class ListingPage extends Page
 {
-	private static $icon = 'vendor/internetrix/silverstripe-listingsummary/images/icons/listingpage';
+	private static $icon = 'internetrix/silverstripe-listingsummary:client/images/icons/listingpage-file.gif';
 	private static $description = 'Lists Children pages or other items on a page';
 	
 	private static $db = [
