@@ -12,7 +12,7 @@ class ListingPageController extends PageController
     {
         parent::init();
 
-        Requirements::javascript('internetrix/silverstripe-listingsummary:javascript/listingpage.js');
+        Requirements::javascript('internetrix/silverstripe-listingsummary:client/javascript/listingpage.js');
     }
 
     public function getOffset()
