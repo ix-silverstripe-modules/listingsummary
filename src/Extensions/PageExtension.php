@@ -13,8 +13,8 @@ use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Assets\Image;
 use SilverStripe\Versioned\Versioned;
 
-class PageExtension extends DataExtension {
-	
+class PageExtension extends DataExtension
+{
 	private static $db = [
 		'ShowListingImageOnPage'	=> 'Int',
 		'ListingSummary'			=> 'HTMLText'

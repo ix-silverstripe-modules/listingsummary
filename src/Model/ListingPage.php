@@ -14,10 +14,14 @@ use UncleCheese\DisplayLogic\Forms\Wrapper;
 use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
 use Internetrix\GridFieldExtras\GridFieldConfig_ManySortableRecordEditor;
 use Internetrix\ListingSummary\DataObjects\ListItem;
+use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 
 class ListingPage extends Page
 {
 	private static $icon = 'internetrix/silverstripe-listingsummary:client/images/icons/listingpage-file.gif';
+
+    private static $table_name = 'IRX_ListingPage';
+
 	private static $description = 'Lists Children pages or other items on a page';
 	
 	private static $db = [
@@ -51,10 +55,20 @@ class ListingPage extends Page
             $listConfig = GridFieldConfig_ManySortableRecordEditor::create(30);
         } else {
             $listConfig = GridFieldConfig_RecordEditor::create(30);
+
+            if (class_exists('Symbiote\GridFieldExtensions\GridFieldOrderableRows')) {
+                $listConfig->addComponent(new GridFieldOrderableRows('Sort'));
+            }
         }
 
-		$fields->addFieldToTab('Root.List', Wrapper::create(GridField::create( 'ListItems','List Items', $this->ListItems(), $listConfig ))
-			->displayIf("ListSource")->isEqualTo("Custom")->end());
+		$fields->addFieldToTab('Root.List', Wrapper::create(
+		    GridField::create(
+		        'ListItems',
+                'List Items',
+                $this->ListItems(),
+                $listConfig
+            ))->displayIf("ListSource")->isEqualTo("Custom")->end()
+        );
 		
 		$this->extend("IRXListingCMSFields", $fields);
 		

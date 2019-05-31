@@ -12,9 +12,11 @@ use SilverStripe\Assets\Image;
 use Sheadawson\Linkable\Models\Link;
 use SilverStripe\Versioned\Versioned;
 
-class ListItem extends DataObject {
-
+class ListItem extends DataObject
+{
 	private static $default_sort = '"Sort" ASC';
+
+    private static $table_name = 'IRX_ListItem';
 
 	private static $db = [
 			"Title"		=> 'Varchar(255)',
@@ -43,7 +45,8 @@ class ListItem extends DataObject {
 
     private static $versioned_gridfield_extensions = true;
 
-	public function getCMSFields(){
+	public function getCMSFields()
+    {
 		$fields = parent::getCMSFields();
 		$fields->removeByName('ParentID');
 		$fields->removeByName('Sort');
@@ -59,5 +62,4 @@ class ListItem extends DataObject {
 		
 		return $fields;
 	}
-
 }

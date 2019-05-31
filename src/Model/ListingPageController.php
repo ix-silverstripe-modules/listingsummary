@@ -27,7 +27,7 @@ class ListingPageController extends PageController
     {
         $request 	= $this->getRequest();
         $sortby 	= $request->getVar('sortby');
-        if(!$sortby){
+        if (!$sortby) {
             $sortby = 'default';
         }
         return $sort == $sortby;
@@ -39,7 +39,7 @@ class ListingPageController extends PageController
         $sortby 	= $request->getVar('sortby');
         $sort 		= null;
         if ($sortby) {
-            switch ($sortby){
+            switch ($sortby) {
                 case 'asc':
                     $sort = '"Title" ASC';
                     break;
@@ -82,5 +82,4 @@ class ListingPageController extends PageController
 
         return PaginatedList::create($children, $this->request)->setPageLength($this->PaginationLimit);
     }
-
 }
