@@ -33,15 +33,23 @@ class MigrateListingTask extends BuildTask
         // do everything on stage
         Versioned::set_stage('Stage');
 
+        $this->updateListingPages();
+        $this->updateListItems();
+
+        DB::alteration_message('Process complete.', 'created');
+    }
+
+    public function updateListingPages()
+    {
         $counter = 0;
 
-        $pageSQL = <<<SQL
+        $sql = <<<SQL
 SELECT 
     *
 FROM 
     `ListingPage`;
 SQL;
-        $results = DB::query($pageSQL);
+        $results = DB::query($sql);
 
         foreach ($results as $page) {
             $existingPage = SiteTree::get()->filter([
@@ -52,21 +60,32 @@ SQL;
             if ($existingPage) {
                 $existingPage->ClassName = ListingPage::class;
 
-                $existingPage->write();
+                $listingPage = ListingPage::get()->byID($existingPage->ID);
+
+                $listingPage->ListTitle = $page['ListTitle'];
+                $listingPage->PaginationLimit = $page['PaginationLimit'];
+                $listingPage->ListSource = $page['ListSource'];
+
+                $listingPage->write();
+                $listingPage->copyVersionToStage('Stage', 'Live');
                 $counter++;
             }
         }
 
-        DB::alteration_message("Updated " . $counter . " Listing Pages to the new namespace.", 'created');
+        DB::alteration_message('Updated ' . $counter . ' Listing Pages to the new namespace.', 'created');
+    }
+
+    public function updateListItems()
+    {
         $counter = 0;
 
-        $itemSQL = <<<SQL
+        $sql = <<<SQL
 SELECT 
     *
 FROM 
     `ListItem`;
 SQL;
-        $results = DB::query($itemSQL);
+        $results = DB::query($sql);
 
         foreach ($results as $item) {
             if (!ListItem::get()->byID($item['ID'])) {
@@ -86,6 +105,6 @@ SQL;
             }
         }
 
-        DB::alteration_message("Updated " . $counter . " List Items to the new namespace.", 'created');
+        DB::alteration_message('Updated ' . $counter . ' List Items to the new namespace.', 'created');
     }
 }
